@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Correo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .message {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Verificación de Correo</h2>
+    <div class="message" id="message">Procesando la verificación...</div>
+
+    <script>
+        // Función para sanitizar parámetros de la URL
+        function sanitizeInput(input) {
+            const element = document.createElement('div');
+            element.innerText = input;
+            return element.innerHTML;
+        }
+
+        // Función para obtener parámetros de la URL y sanitizarlos
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                token: sanitizeInput(params.get('token')),
+                email: sanitizeInput(params.get('email'))
+            };
+        }
+
+        async function verifyEmail() {
+            const { token, email } = getQueryParams(); // Obtiene el token y email de la URL, sanitizados
+            const messageDiv = document.getElementById('message');
+
+            if (!token || !email) {
+                messageDiv.textContent = 'Faltan parámetros en la URL para la verificación.';
+                messageDiv.style.color = 'red';
+                return;
+            }
+
+            try {
+                // Usa backticks para incluir variables en la URL
+                const response = await fetch(`https://reclutamiento.soldesp.com/auth/verifyAccount?token=${token}&email=${email}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    messageDiv.textContent = `El correo ${email} ha sido verificado exitosamente.`;
+                    messageDiv.style.color = 'green';
+                } else {
+                    messageDiv.textContent = `Error: ${result.message}`;
+                    messageDiv.style.color = 'red';
+                }
+            } catch (error) {
+                messageDiv.textContent = 'Ocurrió un error en la verificación.';
+                messageDiv.style.color = 'red';
+            }
+        }
+
+        // Llamamos a la función cuando la página se carga
+        window.onload = verifyEmail;
+    </script>
+</body>
+</html>
