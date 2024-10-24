@@ -6,119 +6,135 @@
     <title>Restablecer Contraseña</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url('/reclutamiento-soldesP/root/assets/background.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            height: 100vh;
-            margin: 0;
-            overflow-y: auto;
-            position: relative;
-        }
-    
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 400px;
-            margin-top: 150px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-    
-        form {
-            width: 100%;
-        }
-    
-        .input-container {
-            position: relative;
-            width: 100%;
-            margin-bottom: 15px;
-        }
-    
-        input {
-            padding: 10px;
-            border: 1px solid #E65A35;
-            border-radius: 4px;
-            width: calc(100% - 40px); /* Ajustar el ancho para que no choque con el ícono */
-            box-sizing: border-box;
-            background-color: black;
-            color: white;
-        }
-    
-        input::placeholder {
-            color: white;
-        }
-    
-        .toggle-password {
-            position: absolute;
-            top: 50%;
-            right: 15px; /* Ajuste para despegar del margen derecho */
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: white;
-            font-size: 18px; /* Ajustar el tamaño del ícono si es necesario */
-        }
-    
-        button {
-            background-color: #E65A35;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            border-radius: 10px;
-            transition: background-color 0.3s;
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-bottom: 20px;
-            box-sizing: border-box;
-        }
-    
-        button:hover {
-            background-color: #c44b2d;
-        }
-    
-        .message {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-    
-        .message.success {
-            color: green;
-        }
-    
-        .message.error {
-            color: red;
-        }
-    
-        .logo-left {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 18%;
-            height: auto;
-        }
-    
-        .logo-right {
-            position: absolute;
-            top: 15px;
-            right: 10px;
-            width: 25%;
-            height: auto;
-        }
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url('/reclutamiento-soldesP/root/assets/background.png');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100vh;
+        margin: 0;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 2%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 400px;
+        margin-top: 150px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .input-container {
+        position: relative;
+        width: 100%;
+        margin-bottom: 15px;
+        background-color: black;
+        border-radius: 2%;
+        border: 1px solid #E65A35;
+        display: flex;
+        align-items: center;
+    }
+
+    input {
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: black;
+        color: white;
+    }
+
+    input::placeholder {
+        color: white;
+    }
+
+    .toggle-password {
+        position: absolute;
+        right: 15px;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        transform: translateY(-50%);
+        top: 50%;
+    }
+
+    .forgot-password {
+        display: block;
+        margin-top: 8px;
+        margin-bottom: 20px;
+        font-size: 0.9em;
+        text-align: right;
+        cursor: pointer;
+        text-decoration: underline;
+        color: #E65A35;
+    }
+
+    button {
+        background-color: #E65A35;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 10px;
+        transition: background-color 0.3s;
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+
+    button:hover {
+        background-color: #c44b2d;
+    }
+
+    .message {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .message.success {
+        color: green;
+    }
+
+    .message.error {
+        color: red;
+    }
+
+    .logo-left {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 18%;
+        height: auto;
+    }
+
+    .logo-right {
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        width: 25%;
+        height: auto;
+    }
     </style>
 </head>
 <body>
