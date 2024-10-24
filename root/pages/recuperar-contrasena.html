@@ -38,13 +38,23 @@
         color: #333;
     }
 
-    input, button {
+    form {
+        width: 100%;
+    }
+
+    input {
         padding: 10px;
-        margin: 10px 0;
-        border: 1px solid #ccc;
+        margin-bottom: 15px;
+        border: 1px solid #E65A35; /* Borde con el color especificado */
         border-radius: 4px;
-        width: calc(100% - 20px); /* Ajuste para mantener el margen */
-        box-sizing: border-box; /* Asegura que el ancho incluya el padding y border */
+        width: calc(100% - 20px);
+        box-sizing: border-box;
+        background-color: black;
+        color: white; /* Texto blanco */
+    }
+
+    input::placeholder {
+        color: white; /* Placeholder blanco */
     }
 
     button {
@@ -55,7 +65,10 @@
         font-weight: bold;
         border-radius: 10px;
         transition: background-color 0.3s;
-        width: calc(100% - 20px); /* Mantener el botón alineado con los inputs */
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
     }
 
     button:hover {
