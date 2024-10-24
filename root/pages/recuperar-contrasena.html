@@ -28,6 +28,9 @@
         max-width: 400px;
         margin-top: 150px;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     h2 {
@@ -40,7 +43,8 @@
         margin: 10px 0;
         border: 1px solid #ccc;
         border-radius: 4px;
-        width: 100%;
+        width: calc(100% - 20px); /* Ajuste para mantener el margen */
+        box-sizing: border-box; /* Asegura que el ancho incluya el padding y border */
     }
 
     button {
@@ -51,6 +55,7 @@
         font-weight: bold;
         border-radius: 10px;
         transition: background-color 0.3s;
+        width: calc(100% - 20px); /* Mantener el botón alineado con los inputs */
     }
 
     button:hover {
