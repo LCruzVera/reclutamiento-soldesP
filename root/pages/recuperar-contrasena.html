@@ -177,7 +177,7 @@
         function getQueryParams() {
             const params = new URLSearchParams(window.location.search);
             return {
-                token: sanitizeInput(params.get('token')),
+                token: sanitizeInput(params.get('resetToken')),
                 email: sanitizeInput(params.get('email'))
             };
         }
@@ -196,7 +196,7 @@
             }
 
             try {
-                const response = await fetch(`https://reclutamiento.soldesp.com/auth/resetPassword?token=${token}&email=${email}`, {
+                const response = await fetch(`https://reclutamiento.soldesp.com/auth/resetPassword?resetToken=${token}&email=${email}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
