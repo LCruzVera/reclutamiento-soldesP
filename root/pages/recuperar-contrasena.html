@@ -196,7 +196,7 @@
             }
 
             try {
-                const response = await fetch(`https://reclutamiento.soldesp.com/auth/resetPassword?resetToken=${token}&email=${email}`, {
+                const response = await fetch(`https://reclutamiento.soldesp.com/api/auth/resetPassword?resetToken=${token}&email=${email}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
